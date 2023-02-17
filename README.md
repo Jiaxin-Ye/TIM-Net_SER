@@ -104,7 +104,7 @@ You can download our model files from our shared [link]( https://pan.baidu.com/s
 
 ### 6. Training Details
 
-#### 6.1 Model Parameters
+#### 6.1 Experiment Settings
 
 The **cross-entropy criterion** is used as the objective function. Adam algorithm is adopted to optimize the model with an initial **learning rate** $\alpha$ = $0.001$, and a **batch size** of 64. To avoid over-fitting during the training phase, we implement label **smoothing with factor** 0.1 as a form of regularization and set the **spatial dropout rate** to 0.1. For the $j$-th TAB $\mathcal{T}_j$, there are 39 **kernels** of **size** 2 in Conv layers, and the **dilated rate** is $2^{j-1}$. To guarantee that the maximal receptive field covers the input sequences, we set the **number of TAB** $n$ in both directions to 10 for IEMOCAP and 8 for others.
 
