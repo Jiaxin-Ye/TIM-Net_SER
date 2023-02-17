@@ -150,7 +150,7 @@ TIM-NEt_SER
   year = {2023}
 }
 ```
-- If you are interested in speech emotion recognition, we also have some single-corpus or cross-corpus SER work: 
+- If you are interested in speech emotion recognition, we are delighted to recommend our latest SER works for you to follow up: 
   
   [CTL-MTNet](https://www.ijcai.org/proceedings/2022/0320.pdf): A Novel CapsNet and Transfer Learning-Based Mixed Task Net for the Single-Corpus and Cross-Corpus Speech Emotion Recognition, _**IJCAI 2022**_.
   
