@@ -1,33 +1,19 @@
-# TIM-Net for SER
+# TIM-Net
 
-## Introduction
+Official Tensorflow implementation of ICASSP 2023 paper, "Temporal Modeling Matters: A Novel Temporal Emotional Modeling Approach for Speech Emotion Recognition". [[paper]](https://arxiv.org/abs/2211.08233) 
 
-These are the supplementary material and Tensorflow 2.7 implementation of our paper "**Temporal Modeling Matters: A Novel Temporal Emotional Modeling Approach for Speech Emotion Recognition**", `under review` in ICASSP 2023.![architecture](./Fig/architecture.png)
+### Introduction
 
 In this paper, we propose a **T**emporal-aware b**I**-direction **M**ulti-scale Network, termed **TIM-Net**, which is a novel temporal emotional modeling approach to learn multi-scale contextual affective representations from various time scales. 
 
-Extensive experimental results on six benchmark SER datasets (CASIA, EMODB, EMOVO, IEMOCAP, RAVDESS, and SAVEE) demonstrate the superior performance of TIM-Net, gaining 2.34% and 2.61% improvements of the average UAR and WAR over the second-best on each corpus. Remarkably, TIM-Net outperforms the latest domain-adaptation method on the cross-corpus SER tasks, demonstrating strong generalizability.
+![architecture](./Fig/architecture.png)
 
-*We will update our codes and pre-processing features (MFCC) very soon.*
+## Usage:
 
-
-## Folder structure
-
-```
-TIM-NEt_SER
-├─ Code (Update very soon)
-│    ├─ BiDTCNs.py
-│    ├─ Common_Model.py
-│    ├─ TCN_Model.py
-│    ├─ Utils.py
-│    ├─ main.py
-│    ├─ requirement.txt
-├─ README.md
-├─ Supplementary Appendix.pdf
-```
-
-
-## Run
+> **Our MFCC features files (*.npy)**: `links`: https://pan.baidu.com/s/1Y-GDJXpF0FqjcGGN6y84JA?pwd=MFCC `code`: MFCC 
+>**Our testing model weight files (*.hdf5)**: `links`:  https://pan.baidu.com/s/1EtjhuljeHwvIjYG8hYtMXQ?pwd=HDF5 `code`: HDF5 
+> 
+> **Our used datasets (*.zip)**:`links`: https://pan.baidu.com/s/1K71RAaFSPPDUPoVX90_-JA?pwd=DATA `code`: DATA.
 
 ### 1. Clone Repository
 
@@ -36,7 +22,7 @@ $ git clone https://github.com/Jiaxin-Ye/TIM-Net_SER.git
 $ cd TIM-Net_SER/Code
 ```
 
-## 2. Requirements
+### 2. Requirements
 
 Our code is based on Python 3 (>= 3.8). There are a few dependencies to run the code. The major libraries are listed as follows:
 
@@ -53,27 +39,29 @@ Our code is based on Python 3 (>= 3.8). There are a few dependencies to run the 
 $ pip install -r requirement.txt
 ```
 
-## Datasets
+### 3. Datasets
 
-The five public emotion datasets are used in the experiments: the Institute of Automation of Chinese Academy of Sciences (CASIA), Berlin Emotional dataset (EMODB), Italian Emotional Speech dataset (EMOVO), Interactive EMOtional dyadic motion CAPture database (IEMOCAP), Ryerson Audio-Visual Dataset of Emotional Speech and Song (RAVDESS), and Surrey Audio-Visual Expressed Emotion dataset (SAVEE). The languages of IEMOCAP, RAVDESS and SAVEE are English. While the CASIA, EMODB and EMOVO datasets contain Chinese, German and Italian speeches.
+The six public emotion datasets are used in the experiments: the CASIA, EMODB, EMOVO, IEMOCAP, RAVDESS, and SAVEE. The languages of IEMOCAP, RAVDESS and SAVEE are English, while the CASIA, EMODB and EMOVO datasets contain Chinese, German and Italian speeches.
 
-| Dataset | Language | Speakers [Male/Female] | Numbers | Emotion [No. : Category List]                                | Frequency |
-| ------- | -------- | ---------------------- | ------- | ------------------------------------------------------------ | --------- |
-| CASIA   | Chinese  | 2/2                    | 1,200   | 6: Angry, Fear, Happy, Neutral, Sad, Surprise                | 22.1      |
-| EMODB   | German   | 5/5                    | 535     | 7: Angry, Boredom, Disgust, Fear, Happy,  Neutral, Sad       | 16.0      |
-| EMOVO   | Italian  | 3/3                    | 588     | 7: Angry, Disgust, Fear, Happy,  Neutral, Sad, Surprise      | 48.0      |
-| IEMOCAP | English  | 5/5                    | 5,531   | 4: Angry, Happy, Neutral, Sad                                | 48.0      |
-| RAVDESS | English  | 12/12                  | 1,440   | 8: Angry, Calm, Disgust, Fear, Happy, Neutral, Sad, Surprise | 48.0      |
-| SAVEE   | English  | 4/0                    | 480     | 7: Angry, Disgust, Fear, Happy,  Neutral, Sad, Surprise      | 44.1      |
+If you don't have convenient access to these datasets, you can download them from our shared  [link](https://pan.baidu.com/s/1K71RAaFSPPDUPoVX90_-JA?pwd=DATA ).
 
-***If you don't have convenient access to these datasets, you can download it from our shared `links`: https://pan.baidu.com/s/1K71RAaFSPPDUPoVX90_-JA?pwd=DATA `code`: DATA.***
+### 4. Preprocessing
 
-## Preprocessing
+In the experiments, the 39-D static MFCCs are extracted using the Librosa toolbox with the **default settings**. Specifically, the frame length is 50 ms, the frame shift is 12.5 ms, the sample rate is 22050 Hz and the window function added for the speech is Hamming window. 
 
-In the experiments, the 39-D MFCCs are extracted from the Librosa toolbox with the default settings. That is, the frame length is 0.05 s, the frame shift is 0.0125 s, the sample rate is 22050 kHz and the window function added for the speech is Hamming window. For the cross-corpus SER task, the "mean_signal_length" is set to 100000. 
+> In the single-corpus SER task, the "mean_signal_length" is set to 88000, 96000, 96000, 310000, 110000, 130000 for CASIA, EMODB, EMOVO, IEMOCAP, RAVDESS and SAVEE, which is almost the same as the maximum length of the input sequences.
+>
+> In the cross-corpus SER task, the "mean_signal_length" is set to 100000. 
+
+If you are not convenient  to preprocess these features, you can download them from our shared [link](https://pan.baidu.com/s/1Y-GDJXpF0FqjcGGN6y84JA?pwd=MFCC ) to `MFCC` folder.
 
 ```python
-def get_feature(file_path: str, mfcc_len: int = 39, flatten: bool = False):
+def get_feature(file_path: str, mfcc_len: int = 39, mean_signal_length: int = 100000):
+  	"""
+  		file_path: 
+  		mfcc_len: 
+  		mean_signal_length: 
+  	"""
     signal, fs = librosa.load(file_path)
     s_len = len(signal)
 
@@ -92,78 +80,78 @@ def get_feature(file_path: str, mfcc_len: int = 39, flatten: bool = False):
     return feature
 ```
 
-## Training and Testing
+### 5. Training and Testing
 
-### Training
-
-```bash
-$ python main.py --mode train --data EMODB --split_fold 10 --random_seed 46 --epoch 200 --gpu 0
-```
-
-### Testing
-
-If you want to test your model on 10-fold cross-validation manner with `46' random seed, you can run following command with:
+#### Training
 
 ```bash
-$ python main.py --mode test --data EMODB  --test_path ./Best_Models/EMODB_46 --split_fold 10 --random_seed 46
+$ python main.py --mode train --data EMODB --split_fold 10 --random_seed 46 --epoch 300 --gpu 0
 ```
 
-## SER Results
+#### Testing
 
+If you want to test your model on 10-fold cross-validation manner with `X' random seed, you can run following commands:
 
-The overall results of different SOTA methods on six SER benchmark corpora under 10-fold CV. Evaluation measures are UAR(%) / WAR(%). The `-' implies the lack of this measure, and the best results are highlighted in **bold**.
+```bash
+$ python main.py --mode test --data CASIA  --test_path ./Test_Models/CASIA_32 --split_fold 10 --random_seed 32
+$ python main.py --mode test --data EMODB  --test_path ./Test_Models/EMODB_46 --split_fold 10 --random_seed 46
+$ python main.py --mode test --data EMOVO  --test_path ./Test_Models/EMOVO_1 --split_fold 10 --random_seed 1
+$ python main.py --mode test --data IEMOCAP  --test_path ./Test_Models/IEMOCAP_16 --split_fold 10 --random_seed 16
+$ python main.py --mode test --data RAVDE  --test_path ./Test_Models/RAVDE_46 --split_fold 10 --random_seed 46
+$ python main.py --mode test --data SAVEE  --test_path ./Test_Models/SAVEE_44 --split_fold 10 --random_seed 44
+```
 
-| Model       |   Year   |       CASIA       | Model        |   Year   |       EMODB       | Model       |   Year   |       EMOVO       |
-| :---------- | :------: | :---------------: | :----------- | :------: | :---------------: | :---------- | :------: | :---------------: |
-| DT-SVM      |   2019   |   85.08 / 85.08   | TSP+INCA     |   2021   |   89.47 / 90.09   | RM+CNN      |   2021   |   68.93 / 68.93   |
-| TLFMRF      |   2020   |   85.83 / 85.83   | GM-TCN       |   2022   |   90.45 / 91.40   | SVM         |   2021   |   73.30 / 73.30   |
-| GM-TCN      |   2022   |   90.17 / 90.17   | Light-SERNet |   2022   |   94.15 / 94.21   | TSP+INCA    |   2021   |   79.08 / 79.08   |
-| CPAC        |   2022   |   92.75 / 92.75   | CPAC         |   2022   |   94.22 / 94.95   | CPAC        |   2022   |   85.40 / 85.40   |
-| **TIM-Net** | **2023** | **94.67 / 94.67** | **TIM-Net**  | **2023** | **95.17 / 95.70** | **TIM-Net** | **2023** | **92.00 / 92.00** |
+You can download our model files from our shared [link]( https://pan.baidu.com/s/1EtjhuljeHwvIjYG8hYtMXQ?pwd=HDF5) to `Test_Models` folder. 
 
-| **Model**    | **Year** |    **IEMOCAP**    | **Model**   | **Year** |    **RAVDESS**    | **Model**   | **Year** |     **SAVEE**     |
-| :----------- | :------: | :---------------: | :---------- | :------: | :---------------: | :---------- | :------: | :---------------: |
-| MHA+DRN      |   2019   |     67.40 / -     | INCA+TS-CNN |   2021   |     - / 85.00     | 3D CNN      |   2019   |     - / 81.05     |
-| CNN+Bi-GRU   |   2020   |   71.72 / 70.39   | TSP+INCA    |   2021   |   87.43 / 87.43   | TSP+INCA    |   2021   |   83.38 / 84.79   |
-| SPU+MSCNN    |   2021   |   68.40 / 66.60   | GM-TCN      |   2022   |   87.30 / 87.64   | GM-TCN      |   2022   |   84.40/ 86.01   |
-| Light-SERNet |   2022   |   70.76 / 70.23   | CPAC        |   2022   |   88.41 / 89.03   | CPAC        |   2022   |   83.69 / 85.63   |
-| **TIM-Net**  | **2023** | **72.50 / 71.65** | **TIM-Net** | **2023** | **91.93 / 92.08** | **TIM-Net** | **2023** | **86.31 / 87.71** |
+### 6. Training Details
 
-## Visualization of Learned Affective Representation
+#### 6.1 Model Parameters
 
-The results confirm that the TIM-Net provides more class-discriminative representations to support superior performance.
+The **cross-entropy criterion** is used as the objective function. Adam algorithm is adopted to optimize the model with an initial **learning rate** $\alpha$ = $0.001$, and a **batch size** of 64. To avoid over-fitting during the training phase, we implement label **smoothing with factor** 0.1 as a form of regularization and set the **spatial dropout rate** to 0.1. For the $j$-th TAB $\mathcal{T}_j$, there are 39 **kernels** of **size** 2 in Conv layers, and the **dilated rate** is $2^{j-1}$. To guarantee that the maximal receptive field covers the input sequences, we set the **number of TAB** $n$ in both directions to 10 for IEMOCAP and 8 for others.
 
+For fair comparisons with the SOTA approaches, we perform **10-fold cross-validation (CV)** as well as previous works in experiments. 
 
+#### 6.2 Model Size
 
-![architecture](./Fig/tsne.png)
+Since not all SOTA methods we compared provide their source codes or model sizes in the paper, we can only select some typical ones for size comparison. For example, the model sizes of *Light-SERNet* (0.88 MB), *GM-TCN* (1.13 MB), and *CPAC* (1.23 MB) are all larger than TIM-Net (**0.40** MB). 
 
-## Domain Generalization Analysis
+Our proposed models are trained on an Nvidia GeForce RTX 3090 GPU with an average of 60 ms per step. The results demonstrate that our TIM-Net is **lightweigh** yet **effective**.
 
-Due to various languages and speakers, the SER corpora, although sharing the same emotion, have considerably significant domain shifts. The generalization of the model to unseen domain/corpus is critically important for SER. We likewise validate the generalizability of TIM-Net on the cross-corpus SER task. 
+#### 6.3 Training Procedure
 
-Surprisingly, TIM-Net outperforms CAAM [1], one latest task-specific domain-adaptation method. The results suggest that our TIM-Net is effective in modeling emotion with strong generalizability.
+We show the training procedure on the EMODB dataset in the following figure, which illustrates that our model can converge effectively.
 
+![architecture](./Fig/training.png)
 
+## Folder structure
 
-| Method                                       |        TCN        |       CAAM        |       TIM-Net        |
-| -------------------------------------------- | :---------------: | :---------------: | :------------------: |
-| $\mathrm{UAR}_\mathrm{avg} \pm \mathrm{std}$ | 24.47 $\pm$ 0.38  | 32.37 $\pm$ 0.27  | **34.49 $\pm$ 0.43** |
-| $\mathrm{WAR}_\mathrm{avg} \pm \mathrm{std}$ | 24.39 $\pm$ 0.42. | 33.65 $\pm$ 0.41. | **35.66 $\pm$ 0.32** |
+```
+TIM-NEt_SER
+├─ Code
+│    ├─ BiDTCNs.py
+│    ├─ Common_Model.py
+│    ├─ MFCC (Download MFCC files here)
+│    ├─ Models (Store model files)
+│    ├─ Results (Store result files)
+│    ├─ TCN_Model.py
+│    ├─ Test_Models (Download pretrained models here)
+│    ├─ Utils.py
+│    ├─ main.py
+│    └─ requirement.txt
+├─ README.md
+```
 
-## Reference
-[1] *#XinCheng Wen, #JiaXin Ye, Yan Luo, et al., “CTL-MTNet: A novel capsnet and transfer learning-based mixed task net for single-corpus and cross-corpus speech emotion recognition,” in IJCAI 2022, Vienna, Austria, 23-29 July 2022, 2022, pp.2305–2311*
+## Acknowledgement
 
-## Citation
+- This repository is heavily based on **[GM-TCNet](https://github.com/Jiaxin-Ye/GM-TCNet)**.
 
-If you compare or use our model in your own work, please cite the following
-[paper](https://arxiv.org/abs/2211.08233):
-
+- If you compare this paper or use our code in your research, please consider citing us as follows.
 ```bibtex
-@article{jiaxin2022TIMNET,
+@inproceedings{TIMNET,
   title={Temporal Modeling Matters: A Novel Temporal Emotional Modeling Approach for Speech Emotion Recognition},
   author = {Ye, Jiaxin and Wen, Xincheng and Wei, Yujie and Xu, Yong and Liu, Kunhong and Shan, Hongming},
-  journal={arXiv preprint arXiv:2211.08233},
-  year={2022}
+  booktitle = {2023 {IEEE} International Conference on Acoustics, Speech and Signal Processing ({ICASSP}), Rhodes Island, Greece, June 4-10, 2023},
+  year = {2023}
 }
 ```
 
