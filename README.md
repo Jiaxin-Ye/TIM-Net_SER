@@ -129,14 +129,13 @@ We show the training procedure on the EMODB dataset in the following figure, whi
 ```
 TIM-NEt_SER
 ├─ Code
-│    ├─ BiDTCNs.py
-│    ├─ Common_Model.py
 │    ├─ MFCC (Download MFCC files here)
 │    ├─ Models (Store model files)
 │    ├─ Results (Store result files)
-│    ├─ TCN_Model.py
 │    ├─ Test_Models (Download pretrained models here)
-│    ├─ Utils.py
+│    ├─ Model.py
+│    ├─ TIMNET.py
+│    ├─ Common_Model.py
 │    ├─ main.py
 │    └─ requirement.txt
 ├─ README.md
