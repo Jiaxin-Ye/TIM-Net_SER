@@ -141,8 +141,6 @@ TIM-NEt_SER
 
 ## Acknowledgement
 
-- This repository is heavily based on **[GM-TCNet](https://github.com/Jiaxin-Ye/GM-TCNet)**.
-
 - If you compare this paper or use our code in your research, please consider citing us as follows.
 ```bibtex
 @inproceedings{TIMNET,
@@ -152,4 +150,6 @@ TIM-NEt_SER
   year = {2023}
 }
 ```
+- If you are interested in speech emotion recognition, we also have some single-corpus or cross-corpus SER work: [GM-TCNet: Gated Multi-scale Temporal Convolutional Network using Emotion Causality for Speech Emotion Recognition](https://arxiv.org/abs/2210.15834) and [CTL-MTNet: A Novel CapsNet and Transfer Learning-Based Mixed Task Net for the Single-Corpus and Cross-Corpus Speech Emotion Recognition](https://www.ijcai.org/proceedings/2022/0320.pdf).
+
 
