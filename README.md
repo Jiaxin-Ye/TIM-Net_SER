@@ -51,17 +51,15 @@ If you don't have convenient access to these datasets, you can download them fro
 In the experiments, the 39-D static MFCCs are extracted using the Librosa toolbox with the **default settings**. Specifically, the frame length is 50 ms, the frame shift is 12.5 ms, the sample rate is 22050 Hz and the window function added for the speech is Hamming window. 
 
 > In the single-corpus SER task, the "mean_signal_length" is set to 88000, 96000, 96000, 310000, 110000, 130000 for CASIA, EMODB, EMOVO, IEMOCAP, RAVDESS and SAVEE, which is almost the same as the maximum length of the input sequences.
->
-> In the cross-corpus SER task, the "mean_signal_length" is set to 100000. 
 
 If you are not convenient  to preprocess these features, you can download them from our shared [link](https://pan.baidu.com/s/1Y-GDJXpF0FqjcGGN6y84JA?pwd=MFCC ) to `MFCC` folder.
 
 ```python
 def get_feature(file_path: str, mfcc_len: int = 39, mean_signal_length: int = 100000):
   	"""
-  		file_path: 
-  		mfcc_len: 
-  		mean_signal_length: 
+    file_path: Speech signal folder
+    mfcc_len: MFCC coefficient length
+    mean_signal_length: MFCC feature average length
   	"""
     signal, fs = librosa.load(file_path)
     s_len = len(signal)
