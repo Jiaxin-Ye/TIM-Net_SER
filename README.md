@@ -11,6 +11,7 @@ In this paper, we propose a **T**emporal-aware b**I**-direction **M**ulti-scale 
 ## Usage:
 
 > **Our MFCC features files (*.npy)**: `links`: https://pan.baidu.com/s/1Y-GDJXpF0FqjcGGN6y84JA?pwd=MFCC `code`: MFCC 
+>
 >**Our testing model weight files (*.hdf5)**: `links`:  https://pan.baidu.com/s/1EtjhuljeHwvIjYG8hYtMXQ?pwd=HDF5 `code`: HDF5 
 > 
 > **Our used datasets (*.zip)**:`links`: https://pan.baidu.com/s/1K71RAaFSPPDUPoVX90_-JA?pwd=DATA `code`: DATA.
