@@ -150,6 +150,10 @@ TIM-NEt_SER
   year = {2023}
 }
 ```
-- If you are interested in speech emotion recognition, we also have some single-corpus or cross-corpus SER work: GM-TCNet: Gated Multi-scale Temporal Convolutional Network using Emotion Causality for Speech Emotion Recognition [_Speech Communication 2022_](https://arxiv.org/abs/2210.15834) and CTL-MTNet: A Novel CapsNet and Transfer Learning-Based Mixed Task Net for the Single-Corpus and Cross-Corpus Speech Emotion Recognition [_IJCAI 2022_](https://www.ijcai.org/proceedings/2022/0320.pdf).
+- If you are interested in speech emotion recognition, we also have some single-corpus or cross-corpus SER work: 
+  
+  [GM-TCNet](https://arxiv.org/abs/2210.15834): Gated Multi-scale Temporal Convolutional Network using Emotion Causality for Speech Emotion Recognition, _**Speech Communication 2022**_
+  
+  [CTL-MTNet](https://www.ijcai.org/proceedings/2022/0320.pdf): A Novel CapsNet and Transfer Learning-Based Mixed Task Net for the Single-Corpus and Cross-Corpus Speech Emotion Recognition, _**IJCAI 2022**_.
 
 
