@@ -13,8 +13,6 @@ In this paper, we propose a **T**emporal-aware b**I**-direction **M**ulti-scale 
 > **Our MFCC features files (*.npy)**: `links`: https://pan.baidu.com/s/1Y-GDJXpF0FqjcGGN6y84JA?pwd=MFCC `code`: MFCC 
 >
 >**Our testing model weight files (*.hdf5)**: `links`:  https://pan.baidu.com/s/1EtjhuljeHwvIjYG8hYtMXQ?pwd=HDF5 `code`: HDF5 
-> 
-> **Our used datasets (*.zip)**:`links`: https://pan.baidu.com/s/1K71RAaFSPPDUPoVX90_-JA?pwd=DATA `code`: DATA.
 
 ### 1. Clone Repository
 
@@ -43,8 +41,6 @@ $ pip install -r requirement.txt
 ### 3. Datasets
 
 The six public emotion datasets are used in the experiments: the CASIA, EMODB, EMOVO, IEMOCAP, RAVDESS, and SAVEE. The languages of IEMOCAP, RAVDESS and SAVEE are English, while the CASIA, EMODB and EMOVO datasets contain Chinese, German and Italian speeches.
-
-If you don't have convenient access to these datasets, you can download them from our shared  [link](https://pan.baidu.com/s/1K71RAaFSPPDUPoVX90_-JA?pwd=DATA ).
 
 ### 4. Preprocessing
 
