@@ -137,6 +137,7 @@ TIM-NEt_SER
 
 ## Acknowledgement
 
+- We thank the reviewers for the insightful feedback and constructive suggestions.
 - If you compare this paper or use our code in your research, please consider citing us as follows.
 ```bibtex
 @inproceedings{TIMNET,
