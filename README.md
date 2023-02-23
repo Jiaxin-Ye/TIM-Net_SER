@@ -1,3 +1,7 @@
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/temporal-modeling-matters-a-novel-temporal/speech-emotion-recognition-on-emovo)](https://paperswithcode.com/sota/speech-emotion-recognition-on-emovo?p=temporal-modeling-matters-a-novel-temporal)
+
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/temporal-modeling-matters-a-novel-temporal/speech-emotion-recognition-on-ravdess)](https://paperswithcode.com/sota/speech-emotion-recognition-on-ravdess?p=temporal-modeling-matters-a-novel-temporal)
+
 # TIM-Net
 
 Official Tensorflow implementation of ICASSP 2023 paper, "Temporal Modeling Matters: A Novel Temporal Emotional Modeling Approach for Speech Emotion Recognition". [[paper]](https://arxiv.org/abs/2211.08233) [[code]](https://github.com/Jiaxin-Ye/TIM-Net_SER) 
