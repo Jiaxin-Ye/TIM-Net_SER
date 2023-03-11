@@ -110,7 +110,7 @@ For fair comparisons with the SOTA approaches, we perform **10-fold cross-valida
 
 Since not all SOTA methods we compared provide their source codes or model sizes in the paper, we can only select some typical ones for size comparison. For example, the model sizes of *Light-SERNet* (0.88 MB), *GM-TCN* (1.13 MB), and *CPAC* (1.23 MB) are all larger than TIM-Net (**0.40** MB). 
 
-Our proposed models are trained on an Nvidia GeForce RTX 3090 GPU with an average of 60 ms per step. The results demonstrate that our TIM-Net is **lightweigh** yet **effective**.
+Our proposed models are trained on an Nvidia GeForce RTX 3090 GPU with an average of 60 ms per step. The results demonstrate that our TIM-Net is **lightweight** yet **effective**.
 
 #### 6.3 Training Procedure
 
