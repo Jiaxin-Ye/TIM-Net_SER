@@ -10,9 +10,18 @@ In this paper, we propose a **T**emporal-aware b**I**-direction **M**ulti-scale 
 
 ## Usage:
 
-> **Our MFCC features files (*.npy)**: `Baidu links`: https://pan.baidu.com/s/1Y-GDJXpF0FqjcGGN6y84JA?pwd=MFCC `code`: MFCC or `Google links`: https://drive.google.com/drive/folders/1nl7hej--Nds2m3MrMDHT63fNL-yRRe3d
+> **Our MFCC features files (*.npy)**: 
+> 
+> `Baidu links`: https://pan.baidu.com/s/1Y-GDJXpF0FqjcGGN6y84JA?pwd=MFCC `code`: MFCC 
+> 
+> `Google links`: https://drive.google.com/drive/folders/1nl7hej--Nds2m3MrMDHT63fNL-yRRe3d
+> 
 >
->**Our testing model weight files (*.hdf5)**: `links`:  https://pan.baidu.com/s/1EtjhuljeHwvIjYG8hYtMXQ?pwd=HDF5 `code`: HDF5  or `Google links`: https://drive.google.com/drive/folders/1ZjgcT6R0A0C2twXatgpimFh1a3IL81pw
+>**Our testing model weight files (*.hdf5)**: 
+> 
+> `Baidu links`:  https://pan.baidu.com/s/1EtjhuljeHwvIjYG8hYtMXQ?pwd=HDF5 `code`: HDF5
+> 
+> `Google links`: https://drive.google.com/drive/folders/1ZjgcT6R0A0C2twXatgpimFh1a3IL81pw
 
 ### 1. Clone Repository
 
