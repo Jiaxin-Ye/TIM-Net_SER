@@ -152,7 +152,8 @@ TIM-NEt_SER
 @inproceedings{TIMNET,
   title={Temporal Modeling Matters: A Novel Temporal Emotional Modeling Approach for Speech Emotion Recognition},
   author = {Ye, Jiaxin and Wen, Xincheng and Wei, Yujie and Xu, Yong and Liu, Kunhong and Shan, Hongming},
-  booktitle = {2023 {IEEE} International Conference on Acoustics, Speech and Signal Processing ({ICASSP}), Rhodes Island, Greece, June 4-10, 2023},
+  booktitle = {ICASSP 2023-2023 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), Rhodes Island, Greece, June 4-10, 2023},
+  pages={1--5},
   year = {2023}
 }
 ```
