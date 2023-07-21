@@ -17,6 +17,7 @@ from sklearn.metrics import classification_report
 from sklearn.metrics import confusion_matrix
 import datetime
 import pandas as pd
+import copy
 
 from TIMNET import TIMNET
 
@@ -101,7 +102,7 @@ class TIMNET_Model(Common_Model):
         avg_loss = 0
         for train, test in kfold.split(x, y):
             self.create_model()
-            y[train] = smooth_labels(y[train], 0.1)
+            y_train = smooth_labels(copy.deepcopy(y[train]), 0.1)
             folder_address = filepath+self.args.data+"_"+str(self.args.random_seed)+"_"+now_time
             if not os.path.exists(folder_address):
                 os.mkdir(folder_address)
@@ -109,7 +110,7 @@ class TIMNET_Model(Common_Model):
             checkpoint = callbacks.ModelCheckpoint(weight_path, monitor='val_accuracy', verbose=1,save_weights_only=True,save_best_only=True,mode='max')
             max_acc = 0
             best_eva_list = []
-            h = self.model.fit(x[train], y[train],validation_data=(x[test],  y[test]),batch_size = self.args.batch_size, epochs = self.args.epoch, verbose=1,callbacks=[checkpoint])
+            h = self.model.fit(x[train], y_train,validation_data=(x[test],  y[test]),batch_size = self.args.batch_size, epochs = self.args.epoch, verbose=1,callbacks=[checkpoint])
             self.model.load_weights(weight_path)
             best_eva_list = self.model.evaluate(x[test],  y[test])
             avg_loss += best_eva_list[0]
