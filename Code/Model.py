@@ -107,7 +107,7 @@ class TIMNET_Model(Common_Model):
             if not os.path.exists(folder_address):
                 os.mkdir(folder_address)
             weight_path=folder_address+'/'+str(self.args.split_fold)+"-fold_weights_best_"+str(i)+".hdf5"
-            checkpoint = callbacks.ModelCheckpoint(weight_path, monitor='val_accuracy', verbose=1,save_weights_only=True,save_best_only=True,mode='max')
+            checkpoint = callbacks.ModelCheckpoint(weight_path, verbose=1, save_weights_only=True, save_best_only=False)
             max_acc = 0
             best_eva_list = []
             h = self.model.fit(x[train], y_train,validation_data=(x[test],  y[test]),batch_size = self.args.batch_size, epochs = self.args.epoch, verbose=1,callbacks=[checkpoint])
