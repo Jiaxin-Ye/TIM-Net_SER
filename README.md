@@ -2,20 +2,6 @@
 
 Official Tensorflow implementation of ICASSP 2023 paper, "Temporal Modeling Matters: A Novel Temporal Emotional Modeling Approach for Speech Emotion Recognition". [[paper]](https://arxiv.org/abs/2211.08233) [[code]](https://github.com/Jiaxin-Ye/TIM-Net_SER) 
 
-### 🔊 2023.08.14 Code and Results Update
-
-To Whom It May Concern,
-
-Recently, we have been paying close attention to the feedback received from GitHub, and we sincerely appreciate the engagement of all researchers interested in the TIM-Net.
-
-Upon carefully rechecking the code, we identified an improper utilization of the callback function that `save_best_only` should be set to `False`; this was also improperly used in some open-sourced projects and works leading to overfitting issues.  Here, we will update the code and the corresponding results on GitHub and arXiv to avoid overfitting issues, and provide detailed training specifics for reproducibility. The updated experimental results show that our approach does not exhibit significant overfitting problems, and the performance remains competitive.
-
-We apologize for any inconvenience this may have caused. Please let me know if you have further questions (jxye22@m.fudan.edu.cn). 
-
-Best regards, 
-
-Jiaxin Ye
-
 ### 📕Introduction
 
 In this paper, we propose a **T**emporal-aware b**I**-direction **M**ulti-scale Network, termed **TIM-Net**, which is a novel temporal emotional modeling approach to learn multi-scale contextual affective representations from various time scales. 
@@ -78,16 +64,6 @@ $ python extract_feature.py --data_name RAVDE --mean_signal_length 110000
 $ python extract_feature.py --data_name SAVEE --mean_signal_length 130000
 ```
 
-**🔊 Code Update**
-
-We have taken notice of issues regarding the inability to reproduce MFCC features and we have uploaded the code of feature extraction. Moreover, in order to ensure result reproducibility, we have made tests shown in the figure below and found that: *i)* we reproduced the features using the same speech signals and code on the same device (i.e., device 1), and the extracted features closely match the ones we had provided which just have a difference in some digits after the decimal point; *ii)* we also reproduced them on different devices (i.e., device 1 and device 2), there are larger discrepancies between them. Specifically, the device 1 is based on arm64 CPU architecture with Darwin 22.6.0 kernel version, and the device 2 is based on x86_64 CPU architecture with Linux 4.15.0-76-generic kernel version.
-
-In summary, we provided the MFCC feature files utilized in the experiments to ensure reproducibility. You can use these files to avoid variations in feature extraction across different devices.
-
-<img src="./Fig/feature_preprocessing.png" alt="feature_preprocessing" style="zoom:10%;" />
-
-
-
 ### 5. Training and Testing
 
 #### Training
@@ -122,8 +98,6 @@ The **cross-entropy criterion** is used as the objective function and **overall 
 Since not all SOTA methods we compared provide their source codes or model sizes in the paper, we can only select some typical ones for size comparison. For example, the model sizes of *Light-SERNet* (0.88 MB), *GM-TCN* (1.13 MB), and *CPAC* (1.23 MB) are all larger than TIM-Net (**0.40** MB). Our proposed models are trained on an Nvidia GeForce RTX 3090 GPU with an average of 60 ms per step. The results demonstrate that our TIM-Net is **lightweight** yet **effective**.
 
 #### 6.3 Training Procedure
-
-**🔊 Results Update**
 
 We show the accuracy and loss curves on the whole six corpora in the following figures. The experimental results indicate that TIM-Net does not exhibit significant overfitting issues, and its convergence curves remain relatively stable.
 
