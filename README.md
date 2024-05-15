@@ -32,14 +32,14 @@ $ cd TIM-Net_SER/Code
 
 ### 2. Requirements
 
-Our code is based on Python 3 (>= 3.8). There are a few dependencies to run the code. The major libraries are listed as follows:
+Our code is based on Python 3 (== 3.8). There are a few dependencies to run the code. The major libraries are listed as follows:
 
-* Tensorflow-gpu (>= 2.5.0)
-* Keras (>= 2.5.0, the same as TF)
+* Tensorflow-gpu (== 2.5.0)
+* Keras (== 2.5.0, the same as TF)
 * Scikit-learn (== 1.0.2)
-* NumPy (>= 1.19.5)
+* NumPy (== 1.19.5)
 * SciPy (== 1.8.0)
-* librosa (>= 0.8.1)
+* librosa (== 0.8.1)
 * Pandas (== 1.4.1)
 * ......
 
