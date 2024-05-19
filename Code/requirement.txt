@@ -14,3 +14,4 @@ spafe==0.2.0
 speechpy==2.4
 tensorflow-gpu==2.7.0
 tqdm==4.63.1
+torch
